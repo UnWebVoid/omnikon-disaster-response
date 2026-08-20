@@ -18,11 +18,11 @@
     <main class="layout">
       <section class="panel">
         <h2>1) Upload Disaster Imagery</h2>
-        <p class="muted">Supported: common image files (demo prototype)</p>
-        <input id="imageInput" type="file" accept="image/*" />
+        <p class="muted">Supported: JPG, PNG, WEBP, GIF (demo prototype)</p>
+        <input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp,image/gif" />
         <div id="imagePreviewContainer" class="preview hidden">
           <h3>Uploaded Image</h3>
-          <img id="imagePreview" alt="Uploaded disaster imagery preview" />
+          <canvas id="imagePreviewCanvas" aria-label="Uploaded disaster imagery preview"></canvas>
         </div>
       </section>
 
