@@ -1,3 +1,9 @@
-# Tests (Planned)
+# Tests
 
-This folder will contain automated tests for future OMNIKON components as implementation work begins.
+This directory contains basic automated tests for prototype workflow logic.
+
+Run from repository root:
+
+```bash
+npm test
+```

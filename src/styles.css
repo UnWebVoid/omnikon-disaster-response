@@ -1,0 +1,136 @@
+:root {
+  color-scheme: light;
+  --bg: #f3f5f7;
+  --panel: #ffffff;
+  --ink: #1f2937;
+  --muted: #5f6b7a;
+  --accent: #145d7a;
+  --alert: #9a3412;
+  --ok: #166534;
+  --border: #d1d9e0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.hero {
+  background: linear-gradient(135deg, #0f2a3a, #145d7a);
+  color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin: 0.5rem auto 1rem;
+  max-width: 48rem;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.layout {
+  max-width: 1000px;
+  margin: 1.5rem auto;
+  padding: 0 1rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.warning {
+  color: var(--alert);
+  font-weight: 600;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.hidden {
+  display: none;
+}
+
+select,
+button,
+input[type="file"] {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #b7c2cf;
+  background: #fff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: var(--accent);
+  font-weight: 600;
+}
+
+button:disabled,
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 0.8rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: #f9fbfc;
+  border: 1px solid var(--border);
+}
+
+.verified {
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.plan {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.plan li {
+  margin-bottom: 0.4rem;
+}

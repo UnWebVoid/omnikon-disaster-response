@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OMNIKON Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>OMNIKON</h1>
+      <p>
+        AI-assisted disaster damage assessment and trusted response planning.
+      </p>
+      <span class="tag">Hackathon Prototype • Simulated AI Analysis</span>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>1) Upload Disaster Imagery</h2>
+        <p class="muted">Supported: common image files (demo prototype)</p>
+        <input id="imageInput" type="file" accept="image/*" />
+        <div id="imagePreviewContainer" class="preview hidden">
+          <h3>Uploaded Image</h3>
+          <img id="imagePreview" alt="Uploaded disaster imagery preview" />
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2) Simulated AI Damage Assessment</h2>
+        <p class="warning">
+          Demo mode: this assessment is simulated and does not use a trained model.
+        </p>
+        <div id="aiResult" class="result hidden">
+          <p><strong>AI Damage Classification:</strong> <span id="aiCategory"></span></p>
+          <p><strong>Confidence Score:</strong> <span id="aiConfidence"></span></p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>3) Human Verification</h2>
+        <label for="verifiedCategory">Reviewer Damage Classification</label>
+        <select id="verifiedCategory" disabled>
+          <option value="">Upload and analyze an image first</option>
+          <option value="Low">Low</option>
+          <option value="Moderate">Moderate</option>
+          <option value="Severe">Severe</option>
+        </select>
+        <button id="verifyButton" disabled>Mark as Verified</button>
+
+        <div id="verificationResult" class="result hidden">
+          <p><strong>AI Assessment:</strong> <span id="diffAi"></span></p>
+          <p><strong>Verified Assessment:</strong> <span id="diffVerified"></span></p>
+          <p><strong>Difference:</strong> <span id="diffStatus"></span></p>
+          <p class="verified">Status: Verified</p>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>4) Response Planning Priorities</h2>
+        <p class="muted">Generated from the verified damage level.</p>
+        <ul id="responsePlan" class="plan"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

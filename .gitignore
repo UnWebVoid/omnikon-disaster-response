@@ -76,3 +76,8 @@ wandb/
 data/raw/
 data/interim/
 data/processed/
+
+# Node
+node_modules/
+npm-debug.log*
+

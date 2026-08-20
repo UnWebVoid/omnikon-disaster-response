@@ -1,81 +1,85 @@
 # OMNIKON: AI-Assisted Disaster Response Intelligence
 
-OMNIKON is a hackathon concept for an AI-assisted disaster response intelligence platform. The goal is to help response teams analyze satellite, drone, and ground imagery faster, while improving trust through confidence-based triage and human verification.
+OMNIKON is a hackathon prototype for disaster imagery triage and trusted response planning. The app demonstrates a complete decision flow:
 
-> **Project status:** This repository is currently in the **IDEA SUBMISSION** stage. It contains the initial concept, architecture direction, and implementation plan. A full technical implementation will be developed in subsequent stages.
+**Upload disaster image → Simulated AI assessment → Human verification → Response planning priorities**
 
-## Problem
-During disasters, teams receive large volumes of imagery from multiple sources. Manual review alone can be too slow, while fully automated analysis can produce uncertain or incorrect assessments. Response teams need a faster process that still preserves reliability and accountability.
+> **Current stage:** Idea submission + functional prototype.  
+> This repository includes a working demo workflow, but AI inference is currently **simulated** (no trained model or production pipeline yet).
 
-## Proposed Solution
-OMNIKON combines AI-assisted triage with human verification:
-- AI analyzes incoming imagery and generates damage assessments with confidence scores.
-- High-confidence outputs move quickly through an automated path.
-- Low-confidence outputs are routed for human review.
-- Verified outputs are combined into a trusted response map for planning and coordination.
+## What is Functional Today
+- Web dashboard with OMNIKON project overview
+- Image upload and preview
+- Simulated AI damage assessment with categories:
+  - Low
+  - Moderate
+  - Severe
+- Simulated AI confidence score display
+- Human reviewer verification (confirm or modify AI classification)
+- Visible AI vs verified comparison and **Verified** status
+- Response planning recommendations based on verified damage level
 
-## Core Workflow
-1. **Input**
-   - Satellite imagery
-   - Drone imagery
-   - Ground-level imagery
-2. **AI Triage**
-   - Damage analysis + confidence scoring
-3. **High-Confidence Path**
-   - Auto-processed results
-4. **Low-Confidence Path**
-   - Human verification and correction
-5. **Trusted Response Map**
-   - Verified damage and accessibility intelligence for response planning
+## What is Still Concept/Planned
+- Real model inference over satellite/drone/ground imagery
+- Operational data ingestion pipelines
+- Production-grade reviewer tooling, persistence, and map integration
 
-## High-Level Architecture (Planned)
-- **Ingestion Layer**: Handles multi-source imagery intake and metadata management.
-- **AI Analysis Layer**: Performs classification, damage estimation, and confidence scoring.
-- **Triage & Routing Layer**: Decides automated vs. human-review paths.
-- **Human Verification Interface**: Enables experts/operators to validate uncertain outputs.
-- **Trusted Mapping Layer**: Publishes verified response intelligence for planning use.
+## Prototype Tech Stack
+- Vanilla HTML/CSS/JavaScript (ES modules)
+- Static local hosting via Python `http.server`
+- Node.js built-in test runner (`node --test`) for basic logic tests
 
-## Planned Features
-- Multi-source imagery ingestion pipeline
-- AI-based disaster damage triage with confidence thresholds
-- Human-in-the-loop review queue for uncertain cases
-- Verified response map updates
-- Audit-friendly decision tracking for AI and human actions
+## Local Setup
 
-## Development Roadmap
-### Stage 1 — Concept & Repository Foundation (Current)
-- Define problem framing and architecture
-- Create initial repository structure and documentation
+### Requirements
+- Python 3.9+ (for local static hosting)
+- Node.js 18+ (for running tests)
 
-### Stage 2 — Data and Pipeline Foundations
-- Define data schemas and ingestion contracts
-- Establish preprocessing and storage conventions
+### Run the prototype
+From repository root:
 
-### Stage 3 — AI Triage Prototype
-- Implement initial model integration points
-- Add confidence scoring and threshold routing logic
-
-### Stage 4 — Human Verification Workflow
-- Build review workflows and verification state transitions
-- Integrate feedback loop from human decisions
-
-### Stage 5 — Trusted Response Map Integration
-- Aggregate verified outputs into map-ready layers
-- Support planning-oriented exports and summaries
-
-## Repository Structure
-```text
-.
-├── data/      # Data usage guidance and placeholders (no datasets committed)
-├── docs/      # Additional architecture and design documentation
-├── src/       # Future application and pipeline source code
-└── tests/     # Future automated tests
+```bash
+python -m http.server 8000
 ```
 
-## Notes for Hackathon Reviewers
-- This repository intentionally avoids fake implementation.
-- No claims are made about production readiness, model accuracy, or completed system behavior.
-- The focus is a clear, extensible foundation for subsequent development.
+Then open:
+
+```text
+http://localhost:8000/src/
+```
+
+### Run tests
+From repository root:
+
+```bash
+npm test
+```
+
+## Project Structure
+```text
+.
+├── README.md
+├── LICENSE
+├── .gitignore
+├── package.json
+├── src/
+│   ├── index.html      # Prototype UI
+│   ├── styles.css      # UI styling
+│   ├── app.js          # Browser workflow wiring
+│   └── logic.js        # Core prototype logic (testable)
+├── tests/
+│   └── logic.test.js   # Basic workflow logic tests
+├── docs/
+│   └── README.md
+└── data/
+    └── README.md
+```
+
+## Prototype Workflow
+1. Upload an image.
+2. OMNIKON generates a **simulated** AI damage class and confidence score.
+3. A human reviewer confirms or updates the classification.
+4. The system shows verification status and generates prioritized response guidance.
 
 ## License
 This project is licensed under the MIT License. See [`LICENSE`](./LICENSE).

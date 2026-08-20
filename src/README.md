@@ -1,3 +1,9 @@
-# Source Code (Planned)
+# Source Code
 
-This folder is reserved for the future OMNIKON implementation, including ingestion, AI triage, routing, verification, and mapping components.
+This directory contains the working OMNIKON web prototype:
+- `index.html` — dashboard and workflow UI
+- `styles.css` — disaster-management themed styling
+- `app.js` — upload, assessment, verification, and response flow logic
+- `logic.js` — core deterministic demo logic used by UI and tests
+
+AI analysis in this prototype is simulated for hackathon demonstration.
